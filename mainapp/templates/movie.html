@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильм</title>
+</head>
+<body>
+{%block content%}
+<div style="background-color: #c4dce8">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .image {
+            margin-right: 20px;
+        }
+
+        .text {
+            margin-left: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            font-family: "Algerian";
+            font-size: 10px;
+        }
+
+        .description {
+            text-align: left;
+            margin-left: 60px;
+        }
+
+        .video {
+            align-items: center;
+            margin-left: 180px;
+        }
+    </style>
+    <div class="heading">
+        <h1>{{movie.name}}</h1><br>
+    </div>
+    <hr>
+    <div class="container">
+        <a class="image" href="#"><img style="width: 280px;" src="{{movie.movie_image.url}}"></a>
+        <hr>
+        <br>
+        <div class="text">
+            <p><h5>Категория: {{movie.category}}</h5></p>
+            <p><h5 style="font-weight: bold">Рейтинг: IMDb {{movie.rating}}</h5></p>
+            <p><h5>Страна: {{movie.city}}</h5></p>
+        </div>
+    </div>
+    <div class="description">
+        <p>
+        <h2>Описание:</h2></p><br>
+        <h5>{{movie.description}}</h5>
+    </div>
+    <div class="video">
+        <video width="1050" height="750" controls>
+            <source src="{{movie.movie_video.url}}" type="video/mp4">
+        </video>
+    </div>
+    <br>
+    <div class="link">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/">Перейти на главную</a>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Войти</title>
+</head>
+<body>
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <hr>
+        <button>Войти</button>
+    </form>
+    <a href="/">Вернутся на главную</a>
+</div>
+{% endblock content %}
+
+</body>
+</html>
